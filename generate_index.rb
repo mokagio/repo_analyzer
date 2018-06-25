@@ -70,10 +70,10 @@ body {
         Git churn is the number of commits on the file, how often it changes. File length is a rough but effective metric of the complexity of the code in the file (link needed).
       </p>
       <p class="lead">
-        Files that change often and are complex are good candidates to be sources of bugs.
+        Complex files that change often are likely to be sources of bugs.
       </p>
       <p class="lead">
-         <strong>The files in the top-right quadrant are great candidates to refactor</strong>. Working on them will provide a great return of time invested. This is why only the files with the highest churn and/or length are in the graph, the information shown is aimed to be actionable.
+         <strong>The files in the top-right are great candidates to refactor</strong>. Working on them will provide a great return of time invested. This is why only the files with the highest churn and/or length are in the graph, the information shown is aimed to be actionable.
       </p>
       <p class="lead">
         Hover on a dot to see the file it represents. The full list of entries is in the table at the end of the page.
@@ -85,7 +85,7 @@ body {
       </div>
       <h3 class="mt-3">Where to go from here</h3>
       <p>
-        Plotting Git churn against file length is only the tip of the iceberg in terms of information that can be mined out of a repository. Here's some ideas:
+        Plotting Git churn against file length is only the tip of the iceberg in terms of information that can be mined out of a repository. Here are some ideas:
       </p>
       <ul>
         <li>Activity over time. A file might have high churn and complexity, but maybe it hasn't been touched in a long time and is part of a stable and well tested area of the codebase. There's not much to gain from refactoring it right now.</li>
@@ -96,7 +96,7 @@ body {
       <p>If this sounds interesting to you please drop your email to learn about new developments.</p>
 
 <!-- Begin MailChimp Signup Form -->
-<div class="row mt-4 mb-4">
+<div class="row mt-5 mb-5">
 <div class="col-12">
 <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
 <div id="mc_embed_signup">
@@ -129,10 +129,13 @@ body {
       <p>
         Services like <a href="https://codeclimate.com/">Code Climate</a> offer a basic graph like the one above. <i>With more time put into the styling too.</i>
       <p>
+      <p>
+        The Git-foo used to extract the churn information has been shared by <a href="https://twitter.com/coreyhaines">Corey Haines</a> and <a href="https://twitter.com/garybernhardt">Gary Bernhardt</a>.
+      </p>
       <h3 class="mt-5">All the files</h3>
       <div class="row">
         <div class="col-lg-12">
-          <table class="table table-striped table-hover">
+          <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">File</th>
@@ -150,6 +153,12 @@ end
 index += <<INDEX
             </tbody>
           </table>
+        </div>
+      </div>
+      <div id="footer" class="row text-center mt-3">
+        <div class="col-12">
+          <p>Built with 💙 by <a href="https://twitter.com/mokagio">@mokagio</a>.</p>
+          <p>Source available on <a href="">GitHub</a>.</p>
         </div>
       </div>
     </div>
