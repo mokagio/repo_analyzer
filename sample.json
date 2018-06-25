@@ -1,0 +1,237 @@
+[
+  {
+    "file": "iflix/TitleScreen/TitleViewModel.swift",
+    "churn": 790,
+    "line_count": 1574
+  },
+  {
+    "file": "iflix/Home/PageViewModel.swift",
+    "churn": 810,
+    "line_count": 1434
+  },
+  {
+    "file": "iflix/Player/NewPlayback/PlaybackViewController.swift",
+    "churn": 412,
+    "line_count": 1215
+  },
+  {
+    "file": "iflixKitTests/NetworkSessionDoubles.swift",
+    "churn": 101,
+    "line_count": 1068
+  },
+  {
+    "file": "iflixTests/Bootstrap/BootstrapV2ControllerSpec.swift",
+    "churn": 31,
+    "line_count": 976
+  },
+  {
+    "file": "iflix/DownloadAndPlay/OfflineFileManager.swift",
+    "churn": 218,
+    "line_count": 969
+  },
+  {
+    "file": "iflixTests/AppThemeSpec.swift",
+    "churn": 25,
+    "line_count": 945
+  },
+  {
+    "file": "iflix/Player/PlayerViewController.swift",
+    "churn": 231,
+    "line_count": 920
+  },
+  {
+    "file": "iflix/AppDelegate/AppDelegate.swift",
+    "churn": 48,
+    "line_count": 870
+  },
+  {
+    "file": "iflix/Home/PageViewController.swift",
+    "churn": 655,
+    "line_count": 829
+  },
+  {
+    "file": "iflix/Player/ChromeCast/ChromecastDeviceController.swift",
+    "churn": 15,
+    "line_count": 735
+  },
+  {
+    "file": "iflix/ChromecastDeviceController.swift",
+    "churn": 80,
+    "line_count": 734
+  },
+  {
+    "file": "iflix/Events/AdobeMobileEventPerformer.swift",
+    "churn": 4,
+    "line_count": 728
+  },
+  {
+    "file": "iflixTests/Home/PageViewModelSpec.swift",
+    "churn": 176,
+    "line_count": 680
+  },
+  {
+    "file": "iflix/Feed/FeedViewController.swift",
+    "churn": 199,
+    "line_count": 639
+  },
+  {
+    "file": "iflix/VideoPlayer.swift",
+    "churn": 135,
+    "line_count": 622
+  },
+  {
+    "file": "iflixTests/Player/VideoPlaybackLoggerSpec.swift",
+    "churn": 9,
+    "line_count": 599
+  },
+  {
+    "file": "iflix/Player/NewPlayback/VideoPlayback.swift",
+    "churn": 176,
+    "line_count": 571
+  },
+  {
+    "file": "iflixTests/Feed/AppStateReducer+FeedSpec.swift",
+    "churn": 46,
+    "line_count": 552
+  },
+  {
+    "file": "iflix/UserInfo.swift",
+    "churn": 151,
+    "line_count": 551
+  },
+  {
+    "file": "iflix/Player/NewPlayback/PlaybackControls.swift",
+    "churn": 111,
+    "line_count": 551
+  },
+  {
+    "file": "iflix/Live/LiveHubViewController.swift",
+    "churn": 229,
+    "line_count": 549
+  },
+  {
+    "file": "iflix/Popup/PopupView.swift",
+    "churn": 70,
+    "line_count": 530
+  },
+  {
+    "file": "iflix/WebPortal/WebPortalController.swift",
+    "churn": 465,
+    "line_count": 528
+  },
+  {
+    "file": "iflix/TitleScreen/TitleViewController.swift",
+    "churn": 353,
+    "line_count": 515
+  },
+  {
+    "file": "iflix/Feed/Views/ExpandableLabel.swift",
+    "churn": 5,
+    "line_count": 509
+  },
+  {
+    "file": "iflix/Popup/Popup.swift",
+    "churn": 89,
+    "line_count": 506
+  },
+  {
+    "file": "iflixTests/UserInfoSpec.swift",
+    "churn": 93,
+    "line_count": 499
+  },
+  {
+    "file": "iflixKit/VimondClient.swift",
+    "churn": 45,
+    "line_count": 496
+  },
+  {
+    "file": "iFlixKit/VimondClient.swift",
+    "churn": 2,
+    "line_count": 496
+  },
+  {
+    "file": "iflixKit/FeatureType.swift",
+    "churn": 394,
+    "line_count": 243
+  },
+  {
+    "file": "iflix/TitleScreen/TitleHeaderViewModel.swift",
+    "churn": 323,
+    "line_count": 416
+  },
+  {
+    "file": "iflix/Menu/RevealViewModel.swift",
+    "churn": 255,
+    "line_count": 462
+  },
+  {
+    "file": "iflix/LoginHelper.swift",
+    "churn": 224,
+    "line_count": 202
+  },
+  {
+    "file": "iflix/Home/HomeDataLoader.swift",
+    "churn": 195,
+    "line_count": 241
+  },
+  {
+    "file": "iflixKit/ExternalAPIService.swift",
+    "churn": 177,
+    "line_count": 124
+  },
+  {
+    "file": "iflix/Player/PlaybackContext.swift",
+    "churn": 170,
+    "line_count": 391
+  },
+  {
+    "file": "iflix/Menu/MenuViewModelTableViewHandler.swift",
+    "churn": 167,
+    "line_count": 381
+  },
+  {
+    "file": "iflix/Search/SearchCoordinator.swift",
+    "churn": 166,
+    "line_count": 308
+  },
+  {
+    "file": "iflix/Login/EmailLoginViewController.swift",
+    "churn": 159,
+    "line_count": 202
+  },
+  {
+    "file": "iflix/Home/Carousel/CarouselCell.swift",
+    "churn": 158,
+    "line_count": 263
+  },
+  {
+    "file": "iflix/Home/Carousel/CarouselCellViewModel.swift",
+    "churn": 158,
+    "line_count": 254
+  },
+  {
+    "file": "iflixTests/TitleHeaderViewModelSpec.swift",
+    "churn": 152,
+    "line_count": 407
+  },
+  {
+    "file": "iflixTests/ExternalConfigHelperSpec.swift",
+    "churn": 152,
+    "line_count": 303
+  },
+  {
+    "file": "iflix/Menu/MenuPresenter.swift",
+    "churn": 151,
+    "line_count": 387
+  },
+  {
+    "file": "iflix/TitleScreen/NativePlaybackHandling.swift",
+    "churn": 149,
+    "line_count": 207
+  },
+  {
+    "file": "iflix/Home/FlyerContentCell.swift",
+    "churn": 147,
+    "line_count": 141
+  }
+]
