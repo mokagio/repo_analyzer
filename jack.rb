@@ -44,7 +44,7 @@ end
 
 puts "🧠 Crunching numbers..."
 
-threshold = 30
+threshold = 15
 # get the <threshold> longest files
 longests = combined_data.sort_by { |d| d[:line_count] }
 # get the <threshold> files with more churn
