@@ -349,4 +349,4 @@ end
 puts "✅ An HTML report has been generate in the current folder. Would you like to open it? Y/N [Y]"
 should_open = STDIN.gets.chomp.downcase
 
-`open #{path}` if should_open == 'y'
+`open #{path}` if should_open == 'y' || should_open == ''
