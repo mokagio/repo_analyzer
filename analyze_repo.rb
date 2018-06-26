@@ -1,7 +1,7 @@
 require 'pathname'
 require 'json'
 
-puts "👓 Extracting data from Git..."
+puts "🔬 Extracting data from Git..."
 
 ignored_paths = [
   'Frameworks',
@@ -28,7 +28,7 @@ churn_data = `#{git_churn_cmd}`
     ignored_paths.include?(Pathname(d[:file]).each_filename.first) || selected_extensions.include?(File.extname(d[:file])) == false
   end
 
-puts "👓 Extracting file length data..."
+puts "🔬 Extracting file length data..."
 
 combined_data = []
 churn_data.each do |data|
@@ -74,6 +74,7 @@ content = <<HTML
     <!-- Example based on http://bl.ocks.org/mbostock/3887118 -->
     <!-- Tooltip example from http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html -->
     <!-- Coding style based on http://gist.github.com/mbostock/5977197 -->
+    <title>🔬 Repo analysis</title>
 
     <!-- Bootstrap CSS framework -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
@@ -113,8 +114,7 @@ body {
   <body>
 
     <div class="container">
-      <h1 style="display: inline-block">🕵️‍♂️ Diglett</h1>
-      <h4 style="display: inline-block"><i>&nbsp;&nbsp;(working title)</i></h4>
+      <h1 style="display: inline-block">🔬 Repo analysis</h1>
       <p class="lead">
         The graph below shows a subset of the <code>.swift</code> files in your repository plotted against two metrics, Git churn and file length. Only the files with the highest churn and/or length are shown.
       </p>
@@ -349,4 +349,4 @@ end
 puts "✅ An HTML report has been generate in the current folder. Would you like to open it? Y/N [Y]"
 should_open = STDIN.gets.chomp.downcase
 
-`open #{path}` unless should_open == 'n'
+`open #{path}` if should_open == 'y'
