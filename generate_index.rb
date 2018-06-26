@@ -1,20 +1,72 @@
+require 'pathname'
 require 'json'
 
-data = JSON.parse(File.read('./sample.json'))
-  .sort_by { |entry| entry['churn'] + entry['line_count'] }
+puts "👓 Extracting data from Git..."
+
+ignored_paths = [
+  'Frameworks',
+  'Carthage',
+  'Static-Libraries',
+  'Playgrounds'
+]
+
+selected_extensions = [
+  '.swift'
+]
+
+# https://github.com/garybernhardt/dotfiles/blob/master/bin/git-churn
+git_churn_cmd = %{git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n | awk 'BEGIN {print "count\tfile"} {print $1 "\t" $2}'
+}
+
+churn_data = `#{git_churn_cmd}`
+  .lines
+  .map do |raw|
+    components = raw.strip.split "\t"
+    { file: components[1], churn: components[0].to_i }
+  end
+  .reject do |d|
+    ignored_paths.include?(Pathname(d[:file]).each_filename.first) || selected_extensions.include?(File.extname(d[:file])) == false
+  end
+
+puts "👓 Extracting file length data..."
+
+combined_data = []
+churn_data.each do |data|
+  next unless File.exist? data[:file]
+  next if File.directory? data[:file]
+
+  count = `wc -l "#{data[:file]}"`.strip.split(' ')[0].to_i
+
+  combined_data.push({
+    file: data[:file],
+    churn: data[:churn],
+    line_count: count
+  })
+end
+
+puts "🧠 Crunching numbers..."
+
+longests = combined_data.sort_by { |d| d[:line_count] }
+churnest = combined_data.sort_by { |d| d[:churn] }
+
+threshold = 15
+# get the <threshold> longest files and the <threshold> files with highest churn.
+data = (longests.reverse[0...threshold] + churnest.reverse[0...threshold])
+  .uniq
+  .sort_by { |entry| entry[:churn] + entry[:line_count] }
   .reverse
 
 def table_row(entry)
   """
 <tr>
-  <td>#{entry['file']}</td>
-  <td>#{entry['churn']}</td>
-  <td>#{entry['line_count']}</td>
+  <td>#{entry[:file]}</td>
+  <td>#{entry[:churn]}</td>
+  <td>#{entry[:line_count]}</td>
 </tr>
   """
 end
 
-index = <<INDEX
+content = <<HTML
 <!DOCTYPE html>
 <html>
   <head>
@@ -144,13 +196,13 @@ body {
               </tr>
             </thead>
             <tbody>
-INDEX
+HTML
 
 data.each do |entry|
-  index += table_row(entry)
+  content += table_row(entry)
 end
 
-index += <<INDEX
+content += <<HTML
             </tbody>
           </table>
         </div>
@@ -284,10 +336,17 @@ svg.selectAll(".dot")
     </script>
   </body>
 </html>
-INDEX
+HTML
 
-`rm ./index.html` if File.exists? './index.html'
+path = './repo_analysis.html'
 
-File.open('./index.html', 'w') do |f|
-  f << index
+`rm #{path}` if File.exists? path
+
+File.open(path, 'w') do |f|
+  f << content
 end
+
+puts "✅ An HTML report has been generate in the current folder. Would you like to open it? Y/N [Y]"
+should_open = STDIN.gets.chomp.downcase
+
+`open #{path}` unless should_open == 'n'
